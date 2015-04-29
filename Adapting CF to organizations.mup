@@ -1,0 +1,1964 @@
+{
+  "title": "Adapting CF to organizations",
+  "ideas": {
+    "6": {
+      "title": "Consumers \n\n (Primary actors)",
+      "attr": {
+        "attachment": {
+          "contentType": "text/html",
+          "content": "<p>\n      Whose goals are fulfilled.\n    </p><p>\n      Are directly using the paas\n    </p>"
+        },
+        "style": {
+          "background": "#FFFF00"
+        },
+        "storyboard-scenes": [
+          {
+            "storyboards": {
+              "Storyboard 1": 6
+            },
+            "type": "with-children"
+          }
+        ],
+        "position": [
+          174.51393432146278,
+          -128.49997919341638,
+          20
+        ],
+        "collapsed": true
+      },
+      "ideas": {
+        "4": {
+          "title": "app-ops",
+          "ideas": {
+            "5": {
+              "title": "Deploy custom inhouse software developped internally",
+              "id": 166,
+              "ideas": {
+                "1": {
+                  "title": "Adopt tight devops collaboration with dev, and share automation tools leveraging native CF http://pivotal.io/platform-as-a-service/migrating-to-cloud-native-application-architectures-ebook",
+                  "ideas": {
+                    "1": {
+                      "title": "version app configs in scm",
+                      "id": 36,
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "pull app binaries from repositories ",
+                      "id": 37,
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "automates deployment workflow from CLI individual steps",
+                      "id": 38,
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        }
+                      }
+                    },
+                    "4": {
+                      "title": "operate app using app-provided mechanisms",
+                      "id": 167,
+                      "ideas": {
+                        "1": {
+                          "title": "use spring boot accuator",
+                          "id": 168,
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "use jolokia JMX",
+                          "id": 169,
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            }
+                          }
+                        },
+                        "3": {
+                          "title": "use netflix hystrix and dashboard",
+                          "id": 172,
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            }
+                          }
+                        },
+                        "1.5": {
+                          "title": "use spring config server for hot config reloading",
+                          "id": 173,
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        }
+                      }
+                    },
+                    "0.5": {
+                      "title": "book cover",
+                      "id": 283,
+                      "ideas": {
+                        "1": {
+                          "title": "cloud-native-apps",
+                          "id": 282,
+                          "attr": {
+                            "icon": {
+                              "url": "internal:1/57b2aab6-b5cc-b28a-9772-3e3889ed4175/",
+                              "width": 500,
+                              "height": 750,
+                              "position": "top"
+                            },
+                            "style": {}
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {},
+                        "collapsed": true,
+                        "position": [
+                          182,
+                          -241.55,
+                          1
+                        ]
+                      }
+                    }
+                  },
+                  "id": 35,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    },
+                    "attachment": {
+                      "contentType": "text/html",
+                      "content": "<font size=\"5\">Limitations/obstacles:<br></font><ul><li><font size=\"5\">ops skills (SCM, specific new dbs/nosql stores, stack-specific troubleshooting mechanisms...)</font></li><li><font size=\"5\">organisation slow to change: lacking dedicated-ops, project vs product, outsourced software<br></font></li><li><font size=\"5\">legacy apps that will take time to transform</font><br></li></ul>"
+                    },
+                    "collapsed": true
+                  }
+                },
+                "2": {
+                  "title": "Use standardized operations model across apps",
+                  "id": 39,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "11": {
+                      "title": "logs",
+                      "id": 184,
+                      "ideas": {
+                        "3": {
+                          "title": "standardized app logs trigger NOC alarms",
+                          "id": 176,
+                          "attr": {
+                            "style": {}
+                          }
+                        },
+                        "13": {
+                          "title": "anonymize some logs to share with dev/qa",
+                          "id": 181,
+                          "attr": {
+                            "style": {}
+                          }
+                        },
+                        "0.5": {
+                          "title": "dynamically change app log verbosity",
+                          "id": 180,
+                          "attr": {
+                            "style": {}
+                          },
+                          "ideas": {
+                            "1": {
+                              "title": "diego ssh on each instance to change log framework config file",
+                              "id": 235,
+                              "attr": {
+                                "style": {
+                                  "background": "#ADFF2F"
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "standardized mgt, e.g. JMX mbeans for logback",
+                              "id": 236,
+                              "ideas": {
+                                "1": {
+                                  "title": "TCP port routing to JMX port",
+                                  "id": 289
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "0.25": {
+                          "title": "ease accessing centralized logs associated to apps",
+                          "id": 195,
+                          "attr": {
+                            "style": {}
+                          },
+                          "ideas": {
+                            "1": {
+                              "title": "standard log formats and filters",
+                              "id": 288,
+                              "attr": {
+                                "style": {
+                                  "background": "#ADFF2F"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        },
+                        "collapsed": true
+                      }
+                    },
+                    "12": {
+                      "title": "metrics",
+                      "id": 185,
+                      "ideas": {
+                        "1": {
+                          "title": "app-metrics through JMX",
+                          "id": 170,
+                          "attr": {
+                            "style": {}
+                          }
+                        },
+                        "2": {
+                          "title": "Container low level metrics",
+                          "id": 178,
+                          "attr": {
+                            "style": {}
+                          },
+                          "ideas": {
+                            "1": {
+                              "title": "logsearch for cloudfoundry",
+                              "id": 253,
+                              "attr": {
+                                "style": {
+                                  "background": "#ADFF2F"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        },
+                        "collapsed": true
+                      }
+                    },
+                    "13": {
+                      "title": "app state",
+                      "id": 187,
+                      "ideas": {
+                        "1": {
+                          "title": "ability to snapshot/restore db content prior to schema change to allow rollbacks",
+                          "id": 179,
+                          "attr": {
+                            "style": {}
+                          },
+                          "ideas": {}
+                        },
+                        "2": {
+                          "title": "anonimized production db dumps to share with dev/qa",
+                          "id": 182,
+                          "attr": {
+                            "style": {}
+                          }
+                        },
+                        "0.5": {
+                          "title": "automated backups, scheduled restore attempts",
+                          "id": 215,
+                          "attr": {
+                            "style": {}
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        },
+                        "collapsed": true
+                      }
+                    },
+                    "14": {
+                      "title": "troubleshooting",
+                      "id": 188,
+                      "ideas": {
+                        "1": {
+                          "title": "JVM-level APM",
+                          "id": 175,
+                          "attr": {
+                            "style": {}
+                          },
+                          "ideas": {
+                            "1": {
+                              "title": "newrelic / app dynamics",
+                              "id": 254
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "JVM-level thread dump, heap dump, enable verbose GC",
+                          "id": 171,
+                          "attr": {
+                            "style": {}
+                          }
+                        },
+                        "1.5": {
+                          "title": "Read/set JMX beans to ",
+                          "id": 196,
+                          "attr": {
+                            "style": {}
+                          },
+                          "ideas": {
+                            "1": {
+                              "title": "diego SSH local port forwarding / upcoming TCP routing",
+                              "id": 255
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        },
+                        "collapsed": true
+                      }
+                    },
+                    "15": {
+                      "title": "on call NOC receive alerts (app or paas level) and maintenance messages",
+                      "id": 197,
+                      "ideas": {
+                        "1": {
+                          "title": "cmdb integration",
+                          "id": 199,
+                          "ideas": {
+                            "1": {
+                              "title": "production/ non prod app status",
+                              "id": 200,
+                              "attr": {
+                                "style": {}
+                              }
+                            },
+                            "2": {
+                              "title": "on call team registration",
+                              "id": 201,
+                              "attr": {
+                                "style": {}
+                              }
+                            },
+                            "3": {
+                              "title": "technical to functional mapping to support impact analysis and priorize recovery during outages",
+                              "id": 202,
+                              "attr": {
+                                "style": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        },
+                        "collapsed": true
+                      }
+                    },
+                    "14.5": {
+                      "title": "security",
+                      "id": 222,
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "perform impact analysis w.r.t. incoming CVE on stemcells, rootfs, buildpacks, app dependencies",
+                          "id": 223,
+                          "attr": {
+                            "style": {}
+                          }
+                        },
+                        "2": {
+                          "title": "apply stack security patches to deployed apps",
+                          "id": 243
+                        },
+                        "3": {
+                          "title": "trust a compromised app to be sandboxed to only resources/dependencies it requires",
+                          "id": 252
+                        }
+                      }
+                    },
+                    "5.5": {
+                      "title": "reproductible deployments from dev to prod",
+                      "id": 238,
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        },
+                        "collapsed": true,
+                        "position": [
+                          235,
+                          -425,
+                          1
+                        ]
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "configuration",
+                          "id": 183,
+                          "ideas": {
+                            "1": {
+                              "title": "documented set of supported app configs",
+                              "id": 186,
+                              "attr": {
+                                "style": {}
+                              }
+                            },
+                            "2": {
+                              "title": "versionned applied configs",
+                              "id": 240
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "traceable app binaries origin",
+                          "id": 239,
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            }
+                          }
+                        },
+                        "3": {
+                          "title": "traceable stack and dependencies versions",
+                          "id": 241,
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                },
+                "collapsed": true
+              }
+            },
+            "15": {
+              "title": "Deploy applications whose development is outsourced to integrators",
+              "id": 165,
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                }
+              }
+            },
+            "25": {
+              "title": "Deploy off-the-shelf applications",
+              "id": 164,
+              "ideas": {
+                "1": {
+                  "title": "restricts some routes to HTTPS only",
+                  "id": 189,
+                  "ideas": {
+                    "1": {
+                      "title": "HTTPS only routes",
+                      "id": 190,
+                      "attr": {
+                        "style": {}
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                }
+              }
+            }
+          },
+          "id": 34,
+          "attr": {
+            "style": {
+              "background": "#FFFF00"
+            },
+            "collapsed": true
+          }
+        },
+        "3.25": {
+          "title": "app-dev",
+          "ideas": {
+            "1": {
+              "title": "develop an app on cf",
+              "ideas": {
+                "1": {
+                  "title": "provide a production-ready cf deployment that app-ops trust and are adopting",
+                  "id": 42,
+                  "attr": {
+                    "style": {
+                      "background": "#D3D3D3"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "setup multi-az support",
+                      "id": 257,
+                      "attr": {
+                        "style": {}
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "vcloud",
+                          "id": 273,
+                          "attr": {
+                            "style": {
+                              "background": "#8B0000"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "openstack",
+                          "id": 275,
+                          "attr": {
+                            "style": {
+                              "background": "#ADFF2F"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "setup CF instances in multi-DCs/regions",
+                      "id": 274,
+                      "attr": {
+                        "style": {}
+                      }
+                    }
+                  }
+                },
+                "2": {
+                  "title": "develop a cloud-ready app",
+                  "ideas": {
+                    "1": {
+                      "title": "support spring-boot adoption with builtin production-ready supports",
+                      "id": 44,
+                      "attr": {
+                        "style": {
+                          "background": "#D3D3D3"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "support micro-service architectures",
+                      "id": 45,
+                      "attr": {
+                        "style": {
+                          "background": "#D3D3D3"
+                        }
+                      }
+                    }
+                  },
+                  "id": 43,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    },
+                    "storyboard-scenes": [
+                      {
+                        "storyboards": {
+                          "Storyboard 1": 8
+                        },
+                        "type": "with-children"
+                      }
+                    ]
+                  }
+                },
+                "2.5": {
+                  "title": "adapt an existing app to conform to 12 factor apps",
+                  "id": 194,
+                  "ideas": {
+                    "1": {
+                      "title": "ease adaptation of legacy apps into 12 factor apps",
+                      "ideas": {
+                        "1": {
+                          "title": "provide persistent filesystem abstraction",
+                          "id": 48,
+                          "attr": {
+                            "style": {
+                              "background": "#D3D3D3"
+                            }
+                          },
+                          "ideas": {
+                            "1": {
+                              "title": "Object Storage (riakcs/swift) + non FS apis (native, spring-aws, jclouds)",
+                              "id": 163,
+                              "attr": {
+                                "style": {}
+                              }
+                            },
+                            "2": {
+                              "title": "Object Storage + FS api through fuse S3 driver",
+                              "id": 203,
+                              "attr": {
+                                "style": {}
+                              }
+                            }
+                          }
+                        },
+                        "3": {
+                          "title": "provide gateway to exchange files with legacy apps",
+                          "id": 204,
+                          "ideas": {
+                            "1": {
+                              "title": "Object storage",
+                              "id": 206,
+                              "attr": {
+                                "style": {}
+                              }
+                            },
+                            "2": {
+                              "title": "Messaging for notifications and ACKs",
+                              "id": 207,
+                              "attr": {
+                                "style": {}
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {}
+                          }
+                        },
+                        "4": {
+                          "title": "ease integrating with corp sso",
+                          "id": 208,
+                          "ideas": {
+                            "1": {
+                              "title": "provide oauth/SAML gateway to legacy corp sso",
+                              "id": 210,
+                              "attr": {
+                                "style": {}
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {}
+                          }
+                        },
+                        "0.5": {
+                          "title": "provide session state store mechanism",
+                          "id": 49,
+                          "attr": {
+                            "style": {
+                              "background": "#D3D3D3"
+                            }
+                          },
+                          "ideas": {
+                            "1": {
+                              "title": "memcached tomcat session store",
+                              "id": 160,
+                              "attr": {
+                                "style": {
+                                  "background": "#ADFF2F"
+                                }
+                              }
+                            },
+                            "3": {
+                              "title": "spring boot session + redis",
+                              "id": 162,
+                              "attr": {
+                                "style": {
+                                  "background": "#ADFF2F"
+                                }
+                              },
+                              "ideas": {
+                                "1": {
+                                  "title": "redis session store",
+                                  "id": 161,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#ADFF2F"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "1.5": {
+                              "title": "tomcat redis session manager",
+                              "id": 284,
+                              "attr": {
+                                "style": {
+                                  "background": "#8B0000"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "id": 47,
+                      "attr": {
+                        "style": {
+                          "background": "#D3D3D3"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    },
+                    "collapsed": true
+                  }
+                },
+                "12.5": {
+                  "title": "automates tests",
+                  "ideas": {
+                    "1": {
+                      "title": "support app teams with automated tests including TDD, BDD, balanced test pyramids",
+                      "id": 51,
+                      "attr": {
+                        "style": {
+                          "background": "#D3D3D3"
+                        },
+                        "position": [
+                          206,
+                          46.40000000000009,
+                          1
+                        ]
+                      }
+                    }
+                  },
+                  "id": 50,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    },
+                    "collapsed": true
+                  }
+                }
+              },
+              "id": 41,
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                },
+                "storyboard-scenes": [
+                  {
+                    "storyboards": {
+                      "Storyboard 1": 7
+                    },
+                    "type": "with-children"
+                  }
+                ],
+                "collapsed": true
+              }
+            },
+            "0.5": {
+              "title": "test paas on tools/toys",
+              "id": 286,
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "provide a basic CF instance",
+                  "id": 291,
+                  "ideas": {
+                    "1": {
+                      "title": "public instance",
+                      "id": 260,
+                      "attr": {
+                        "style": {},
+                        "position": [
+                          111.72228007375543,
+                          -58.12495236808854,
+                          5
+                        ]
+                      }
+                    },
+                    "2": {
+                      "title": "operate private instance",
+                      "id": 261,
+                      "ideas": {
+                        "1": {
+                          "title": "CF backups",
+                          "id": 258,
+                          "attr": {
+                            "style": {},
+                            "collapsed": true
+                          },
+                          "ideas": {
+                            "1": {
+                              "title": "bosh snapshots",
+                              "id": 262,
+                              "attr": {
+                                "style": {
+                                  "background": "#ADFF2F"
+                                },
+                                "collapsed": true
+                              },
+                              "ideas": {
+                                "1": {
+                                  "title": "vcloud snapshots https://github.com/cloudfoundry/bosh_vcloud_cpi/search?utf8=%E2%9C%93&q=snapshot",
+                                  "id": 267,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#8B0000"
+                                    }
+                                  }
+                                },
+                                "2": {
+                                  "title": "openstack cinder volume snapshots",
+                                  "id": 268
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "CF data backups: cf-simple-backup https://github.com/SpringerPE/cf-simple-backup",
+                              "id": 270,
+                              "attr": {
+                                "style": {
+                                  "background": "#ADFF2F"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "0.5": {
+                          "title": "automate operations using bosh and Iaas CPI",
+                          "id": 259,
+                          "attr": {
+                            "style": {
+                              "background": "#008000"
+                            },
+                            "position": [
+                              90.16670000994714,
+                              -161.74156171304202,
+                              1
+                            ],
+                            "collapsed": true
+                          },
+                          "ideas": {
+                            "1": {
+                              "title": "vcloud",
+                              "id": 271,
+                              "attr": {
+                                "style": {
+                                  "background": "#008000"
+                                }
+                              },
+                              "ideas": {
+                                "1": {
+                                  "title": "comply to corp network architecture",
+                                  "id": 225,
+                                  "ideas": {
+                                    "1": {
+                                      "title": "restricted outgoing internet access",
+                                      "id": 226,
+                                      "ideas": {
+                                        "1": {
+                                          "title": "HTTP proxy support",
+                                          "id": 227,
+                                          "attr": {
+                                            "style": {}
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "2": {
+                                      "title": "apps isolated into network subnets",
+                                      "id": 228,
+                                      "attr": {
+                                        "style": {}
+                                      },
+                                      "ideas": {
+                                        "1": {
+                                          "title": "ESB/HTTP proxies to access other apps and services",
+                                          "id": 290
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "attr": {
+                                    "style": {},
+                                    "collapsed": true
+                                  }
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "openstack",
+                              "id": 272,
+                              "attr": {
+                                "style": {
+                                  "background": "#008000"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "0.75": {
+                          "title": "connect UAA to corp ldap",
+                          "id": 256,
+                          "attr": {
+                            "style": {
+                              "background": "#008000"
+                            },
+                            "position": [
+                              72.56948321307209,
+                              -76.80535350611166,
+                              2
+                            ]
+                          }
+                        },
+                        "1.5": {
+                          "title": "provide common services (SMTP, outgoing internet access, intranet access) in market place",
+                          "id": 285,
+                          "attr": {
+                            "style": {
+                              "background": "#008000"
+                            }
+                          }
+                        },
+                        "1.75": {
+                          "title": "aggregated logs search/mine",
+                          "id": 287,
+                          "ideas": {
+                            "1": {
+                              "title": "splunk",
+                              "id": 279,
+                              "ideas": {
+                                "1": {
+                                  "title": "splunk exposed as a cf-service",
+                                  "id": 276,
+                                  "ideas": {
+                                    "1": {
+                                      "title": "ldap auth",
+                                      "id": 280,
+                                      "attr": {
+                                        "style": {
+                                          "background": "#008000"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "attr": {
+                                    "style": {
+                                      "background": "#008000"
+                                    }
+                                  }
+                                },
+                                "2": {
+                                  "title": "multi-tenant splunk filters",
+                                  "id": 277,
+                                  "attr": {
+                                    "style": {}
+                                  }
+                                },
+                                "3": {
+                                  "title": "ease navigation among apps, spaces, orgs",
+                                  "id": 278,
+                                  "attr": {
+                                    "style": {}
+                                  }
+                                }
+                              },
+                              "attr": {
+                                "style": {
+                                  "background": "#008000"
+                                },
+                                "collapsed": true
+                              }
+                            },
+                            "2": {
+                              "title": "logsearch: multi-tenant ELK",
+                              "id": 234,
+                              "attr": {
+                                "style": {
+                                  "background": "#ADFF2F"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#008000"
+                            },
+                            "collapsed": true
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {},
+                        "collapsed": true
+                      }
+                    },
+                    "3": {
+                      "title": "optimize capacity to avoid profileration of idle hello worlds",
+                      "id": 58,
+                      "attr": {
+                        "style": {
+                          "background": "#D3D3D3"
+                        },
+                        "collapsed": true,
+                        "position": [
+                          110.12503886281797,
+                          28.783417704076214,
+                          4
+                        ]
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "app-lease times for discovering users",
+                          "id": 191,
+                          "attr": {
+                            "style": {}
+                          }
+                        },
+                        "2": {
+                          "title": "autosleep for development environments",
+                          "id": 192,
+                          "attr": {
+                            "style": {}
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {},
+                    "collapsed": true
+                  }
+                }
+              }
+            }
+          },
+          "id": 40,
+          "attr": {
+            "style": {
+              "background": "#FFFF00"
+            },
+            "storyboard-scenes": [
+              {
+                "storyboards": {
+                  "Storyboard 1": 6
+                },
+                "type": "with-children"
+              }
+            ],
+            "collapsed": true
+          }
+        }
+      },
+      "id": 14
+    },
+    "7": {
+      "title": "Providers",
+      "attr": {
+        "attachment": {
+          "contentType": "text/html",
+          "content": "<p>\n      Secondary actors, provide services to the paas to fullfill the goals of consummers/primary actors\n    </p>"
+        },
+        "style": {
+          "background": "#FFFF00"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "2": {
+          "title": "corp infra services",
+          "ideas": {
+            "1": {
+              "title": "DNS",
+              "id": 69,
+              "attr": {
+                "style": {
+                  "background": "#FFFF00"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "provide API for dynamic custom domains definition",
+                  "id": 216,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                }
+              }
+            },
+            "2": {
+              "title": "PKI",
+              "id": 70,
+              "attr": {
+                "style": {
+                  "background": "#FFFF00"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "provide APIs for custom domains SSL cert generation/renewal",
+                  "id": 217,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                }
+              }
+            },
+            "4": {
+              "title": "CMDB",
+              "id": 72,
+              "attr": {
+                "style": {
+                  "background": "#FFFF00"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "provide APIs for dynamic app registration in CMDB",
+                  "id": 220,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                }
+              }
+            },
+            "5": {
+              "title": "Supervision",
+              "id": 73,
+              "attr": {
+                "style": {
+                  "background": "#FFFF00"
+                }
+              }
+            },
+            "6": {
+              "title": "Enterprise Servise Bus",
+              "ideas": {},
+              "id": 74,
+              "attr": {
+                "style": {
+                  "background": "#FFFF00"
+                }
+              }
+            },
+            "0.5": {
+              "title": "Iaas",
+              "attr": {
+                "attachment": {
+                  "contentType": "text/html",
+                  "content": "<p>\n      compute, storage, network\n    </p>"
+                },
+                "style": {
+                  "background": "#FFFF00"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "provide multi-AZ compute resources",
+                  "id": 218,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                }
+              },
+              "id": 65
+            },
+            "0.75": {
+              "title": "User identity \n\n Ldap, SSO",
+              "id": 71,
+              "attr": {
+                "style": {
+                  "background": "#FFFF00"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "provide APIs for dynamic app registration in SSO system",
+                  "id": 219,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "id": 68,
+          "attr": {
+            "style": {
+              "background": "#FFFF00"
+            },
+            "collapsed": true
+          }
+        }
+      },
+      "id": 64
+    },
+    "8": {
+      "title": "Off-stage actors",
+      "attr": {
+        "attachment": {
+          "contentType": "text/html",
+          "content": "<p>\n      Have an interest in the behaviors, but are not directly benefiting or providing a service, for example regulators, or senior decision makers\n    </p>"
+        },
+        "style": {
+          "background": "#FFFF00"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "Projet directors",
+          "ideas": {
+            "1": {
+              "title": "Ask his teams to try the paas",
+              "id": 86,
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                }
+              }
+            },
+            "2": {
+              "title": "Share with other DPs about benefits of using the paas",
+              "id": 87,
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                }
+              }
+            },
+            "3": {
+              "title": "Convince ops into trying the product",
+              "id": 88,
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                }
+              }
+            },
+            "4": {
+              "title": "Report KPI impact of using our product",
+              "id": 89,
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                }
+              }
+            },
+            "5": {
+              "title": "Share his pains, needs, and obstacles",
+              "ideas": {
+                "1": {
+                  "title": "DP interviews",
+                  "id": 91,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                }
+              },
+              "id": 90,
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                }
+              }
+            }
+          },
+          "id": 85,
+          "attr": {
+            "style": {
+              "background": "#FFFF00"
+            },
+            "collapsed": true
+          }
+        },
+        "2": {
+          "title": "Investors",
+          "ideas": {
+            "4": {
+              "title": "invest in the paas",
+              "attr": {
+                "attachment": {
+                  "contentType": "text/html",
+                  "content": "<p>\n      to fullfill the organisation high level goals\n    </p>"
+                },
+                "style": {
+                  "background": "#FFA500"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "evaluate/measure market size and benefits",
+                  "attr": {
+                    "attachment": {
+                      "contentType": "text/html",
+                      "content": "<p>\n      taille du gateau, combien il gagne\n    </p>"
+                    },
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  },
+                  "ideas": {
+                    "2": {
+                      "title": "mesure Java/COTS cloud eligible apps",
+                      "ideas": {},
+                      "id": 109,
+                      "attr": {
+                        "style": {
+                          "background": "#D3D3D3"
+                        }
+                      }
+                    }
+                  },
+                  "id": 95
+                },
+                "2": {
+                  "title": "Explain/present planned benefits and when",
+                  "ideas": {},
+                  "id": 111,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Regularly report on overall metrics benefits",
+                  "id": 113,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                }
+              },
+              "id": 94
+            }
+          },
+          "id": 92,
+          "attr": {
+            "style": {
+              "background": "#FFFF00"
+            },
+            "collapsed": true
+          }
+        },
+        "4": {
+          "title": "fr- Process/Organisation transformation",
+          "attr": {
+            "style": {
+              "background": "#FFFF00"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "influence internal projects \n\n to leverage paas",
+              "ideas": {
+                "1": {
+                  "title": "perform automated testing",
+                  "id": 131,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "adop agile practices",
+                  "attr": {
+                    "attachment": {
+                      "contentType": "text/html",
+                      "content": "<p>\n      deliver incrementally\n    </p><p>\n      be flexible on scope\n    </p>"
+                    },
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  },
+                  "id": 132
+                }
+              },
+              "id": 130,
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                }
+              }
+            },
+            "2": {
+              "title": "influence integrators (SSII) \n\n (fr- through cloud TPAS)",
+              "ideas": {
+                "1": {
+                  "title": "adopt agile contracts",
+                  "id": 134,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "deliver incrementally on the paas",
+                  "id": 135,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "perform automated testing",
+                  "id": 136,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                }
+              },
+              "id": 133,
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                }
+              }
+            }
+          },
+          "id": 129
+        },
+        "5": {
+          "title": "app-product-mgt",
+          "ideas": {
+            "1": {
+              "title": "adopt agile practices",
+              "ideas": {
+                "1": {
+                  "title": "executable specifications / BDD",
+                  "id": 61,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "feature flags",
+                  "id": 62,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "A/B testing",
+                  "id": 63,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                }
+              },
+              "id": 60,
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                }
+              }
+            }
+          },
+          "id": 59,
+          "attr": {
+            "style": {
+              "background": "#FFFF00"
+            },
+            "collapsed": true
+          }
+        },
+        "0.5": {
+          "title": "Transversal Architects",
+          "attr": {
+            "attachment": {
+              "contentType": "text/html",
+              "content": "<p>\n      Architecte transverse\n    </p>"
+            },
+            "style": {
+              "background": "#FFFF00"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Review/ audit Paas stack against current best practices, recommandations and IT strategy",
+              "ideas": {
+                "1": {
+                  "title": "Specifies paas automation and capture best practices",
+                  "id": 19,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "define standard runtime stacks support",
+                      "id": 229,
+                      "attr": {
+                        "style": {}
+                      }
+                    },
+                    "2": {
+                      "title": "ensure traceability of stacks binaries to providers/distribs",
+                      "id": 233,
+                      "attr": {
+                        "style": {}
+                      }
+                    }
+                  }
+                },
+                "2": {
+                  "title": "use Paas to evaluate upcoming technology and recommend them as best practices",
+                  "id": 20,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "bosh docker release to ease new services deployments",
+                      "id": 230,
+                      "attr": {
+                        "style": {}
+                      }
+                    },
+                    "2": {
+                      "title": "route service to experiment HTTP chain intermediates (mod_page_speed)",
+                      "id": 231,
+                      "attr": {
+                        "style": {}
+                      }
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Root FS vs corp standards",
+                  "id": 224,
+                  "attr": {
+                    "style": {}
+                  }
+                }
+              },
+              "id": 16,
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                }
+              }
+            },
+            "2": {
+              "title": "route projects to Paas",
+              "id": 18,
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "review app architecture and dependencies",
+                  "id": 221,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "id": 15
+        },
+        "4.5": {
+          "title": "Obstructors",
+          "ideas": {
+            "1": {
+              "title": "Some app-ops\n\n (currently busy doing manual provisionning)",
+              "ideas": {
+                "1": {
+                  "title": "Contribute to cloud services operations",
+                  "attr": {
+                    "attachment": {
+                      "contentType": "text/html",
+                      "content": "<ul>\n      <li>\n        respect SLA\n\n        <ul>\n          <li>\n            monitoring: detect failures\n          </li>\n          <li>\n            automate repairs\n          </li>\n        </ul>\n      </li>\n      <li>\n        capacity planning\n      </li>\n      <li>\n        Support:\n\n        <ul>\n          <li>\n            documentation\n          </li>\n          <li>\n            training/best practices\n          </li>\n        </ul>\n      </li>\n    </ul>"
+                    },
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  },
+                  "id": 123
+                },
+                "2": {
+                  "title": "Move to higher value app-ops activities",
+                  "id": 244,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    },
+                    "position": [
+                      164.51999999999998,
+                      140.7693750000003,
+                      1
+                    ]
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "finer/more accurate monitoring",
+                      "id": 245
+                    },
+                    "2": {
+                      "title": "performance and sizing fine tuning",
+                      "id": 250
+                    },
+                    "3": {
+                      "title": "improve support app-specific services (e.g. specific nosql dbs)",
+                      "id": 247
+                    },
+                    "4": {
+                      "title": "automate remaining manual app recoveries",
+                      "id": 248,
+                      "ideas": {
+                        "1": {
+                          "title": "set up chaos monkeys to validate app resiliency mechanism",
+                          "id": 251,
+                          "attr": {
+                            "style": {}
+                          }
+                        }
+                      }
+                    },
+                    "0.5": {
+                      "title": "tighter dev collaboration earlier in the cycle: code review, spec participation",
+                      "id": 246,
+                      "attr": {
+                        "style": {}
+                      }
+                    }
+                  }
+                }
+              },
+              "id": 122,
+              "attr": {
+                "style": {
+                  "background": "#FFFF00"
+                },
+                "collapsed": true
+              }
+            },
+            "3": {
+              "title": "Integrators\n\n (were busy manually preparing deployments)",
+              "attr": {
+                "attachment": {
+                  "contentType": "text/html",
+                  "content": "<p>\n      \n    </p><p>\n      CI2A ? support pour génération des colis IOSW\n    </p>"
+                },
+                "style": {
+                  "background": "#FFFF00"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "automate infra monitoring",
+                  "attr": {
+                    "attachment": {
+                      "contentType": "text/html",
+                      "content": "<p>\n      TMC infra\n    </p><p>\n      \n    </p><p>\n      Exploitabilité des applis\n    </p><p>\n      Utilisent/maintiennent le \"Kit automatisation des installs\" créé avec Pascal Chanas\n    </p>"
+                    },
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  },
+                  "id": 127
+                },
+                "2": {
+                  "title": "automate COTS installation in paas",
+                  "attr": {
+                    "attachment": {
+                      "contentType": "text/html",
+                      "content": "<p>\n      Using Chef recipes, automate COTS installation\n    </p>"
+                    },
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  },
+                  "id": 128
+                }
+              },
+              "id": 126
+            }
+          },
+          "id": 121,
+          "attr": {
+            "style": {
+              "background": "#FFFF00"
+            }
+          }
+        }
+      },
+      "id": 84
+    },
+    "19": {
+      "title": "color code",
+      "attr": {
+        "style": {},
+        "position": [
+          214.60000000000002,
+          249.79999999999995,
+          19
+        ]
+      },
+      "ideas": {
+        "2": {
+          "title": "who (actors)",
+          "attr": {
+            "style": {
+              "background": "#FFFF00"
+            }
+          },
+          "ideas": {
+            "1": {
+              "title": "how (impacts)",
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "what (delivrables)",
+                  "id": 157,
+                  "attr": {
+                    "style": {}
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "completed delivrables",
+                      "id": 263,
+                      "attr": {
+                        "style": {
+                          "background": "#008000"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "currently blocked deliverable",
+                      "id": 264,
+                      "attr": {
+                        "style": {
+                          "background": "#A52A2A"
+                        }
+                      }
+                    },
+                    "1.5": {
+                      "title": "uncompleted  deliverable, [soon] solution available",
+                      "id": 265,
+                      "attr": {
+                        "style": {
+                          "background": "#ADFF2F"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "id": 156
+            }
+          },
+          "id": 155
+        },
+        "12": {
+          "title": "objective",
+          "attr": {
+            "style": {
+              "background": "#00BFFF"
+            }
+          },
+          "ideas": {},
+          "id": 154
+        }
+      },
+      "id": 153
+    },
+    "-13": {
+      "title": "Objectives",
+      "id": 292,
+      "attr": {
+        "style": {
+          "background": "#00BFFF"
+        }
+      },
+      "ideas": {
+        "1": {
+          "title": "Reduce costs for applications\n \n*  proportion of deployments costs w.r.t. overall costs (dev, test)\n*  cost of recurring manual operations \n* cost of infrastructure migrations (iaas, os, middleware...)\n",
+          "id": 151,
+          "attr": {
+            "storyboard-scenes": [
+              {
+                "storyboards": {
+                  "Storyboard 1": 4
+                }
+              }
+            ],
+            "style": {
+              "background": "#00BFFF"
+            }
+          }
+        },
+        "0.5": {
+          "title": "Improve applications Time-to-Market\n\n* elpased time for new app (sprint 0 live in production) \n* avg minimum cycle time (1 point story and live in production) \n*  nb de deployments per year\n *  time between product spec and production user feedback\n\n",
+          "ideas": {
+            "1": {
+              "title": "Scale   \n\n Meter   \n\n Benchmark   \n\n Constraint   \n\n Target",
+              "id": 149,
+              "attr": {
+                "style": {
+                  "background": "#00BFFF"
+                }
+              }
+            }
+          },
+          "id": 148,
+          "attr": {
+            "style": {
+              "background": "#00BFFF"
+            },
+            "storyboard-scenes": [
+              {
+                "storyboards": {
+                  "Storyboard 1": 2
+                }
+              }
+            ]
+          }
+        },
+        "0.75": {
+          "title": "Improve applications QoS \n \n*  avg nb incidents due to deployments/change\n* avg duration of app planned maintenance windows\n* Recovery time following Iaas failure\n* Recovery time following app-level failure\n* Scalability: time to add additional capacity to cope with workload increases\n",
+          "attr": {
+            "attachment": {
+              "contentType": "text/html",
+              "content": "<p>\n      bl\n    </p>"
+            },
+            "style": {
+              "background": "#00BFFF"
+            },
+            "storyboard-scenes": [
+              {
+                "storyboards": {
+                  "Storyboard 1": 3
+                }
+              }
+            ],
+            "position": [
+              315.0833196051326,
+              -26.374982372330862,
+              1
+            ]
+          },
+          "id": 150
+        }
+      }
+    }
+  },
+  "formatVersion": 2,
+  "id": 1,
+  "links": [
+    {
+      "ideaIdFrom": 171,
+      "ideaIdTo": 255,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed"
+        }
+      }
+    }
+  ],
+  "attr": {
+    "style": {},
+    "storyboards": [
+      "Storyboard 1"
+    ],
+    "storyboard-scenes": [
+      {
+        "storyboards": {
+          "Storyboard 1": 1
+        }
+      }
+    ]
+  },
+  "resources": {
+    "1/57b2aab6-b5cc-b28a-9772-3e3889ed4175/": "data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QRXaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzAxNCA3OS4xNTY3OTcsIDIwMTQvMDgvMjAtMDk6NTM6MDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RUZGNjhBRkFCRjkyMTFFNDk5QkM5MTU0NENFMkIzMDQiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RUZGNjhBRjlCRjkyMTFFNDk5QkM5MTU0NENFMkIzMDQiIHhtcDpDcmVhdG9yVG9vbD0iQUggQ1NTIEZvcm1hdHRlciBWNi4yIE1SNCBmb3IgTGludXg2NCA6IDYuMi42LjE4NTUxICgyMDE0LzA5LzI0IDE1OjAwSlNUKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ1dWlkOjI4OGFlM2FlLWZlNDYtZjQ0Ni1hMTVmLTM5NmMwNWQ2YTVkZSIgc3RSZWY6ZG9jdW1lbnRJRD0idXVpZDpjNjc0ZTlkOS04MWRmLWI2NGYtYjE1ZC1hOTY4MjlmMDFkMjQiLz4gPGRjOmNyZWF0b3I+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"
+  }
+}
