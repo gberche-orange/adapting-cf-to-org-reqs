@@ -1894,10 +1894,6 @@
         "0.75": {
           "title": "Improve applications QoS \n \n*  avg nb incidents due to deployments/change\n* avg duration of app planned maintenance windows\n* Recovery time following Iaas failure\n* Recovery time following app-level failure\n* Scalability: time to add additional capacity to cope with workload increases\n",
           "attr": {
-            "attachment": {
-              "contentType": "text/html",
-              "content": "<p>\n      bl\n    </p>"
-            },
             "style": {
               "background": "#00BFFF"
             },
