@@ -9,13 +9,31 @@ Please send PR for sharing your own impact map
 
 # BOF notes: potential useful CF extension for orgs specific reqs ?
 
-Participants: Alberto, William, 
+Participants: Carlo Ferrris, William , Johantan Regehr, Guillaume Berche
 
 use-cases:
 * PCI-DSS compliance: ensure prod anti affinity (host, VM) with non-prod application.
-* 
+* dev / prod segmentation
+ * app network segmentation
+ * log consolidation with different archiving policies
+ * other meta-data
+   * ops entity
+   * app code name
+   * ops on call contacts/ids
+   * app version
+   * cost-center (charge back)
 
-* Support for meta-data in the core platform:
+
+Solutions:
+* meta-data in the app logs, then used by the log consolidation
+* dynamically assigned syslog port
+* set env vars 
+ * to the app as meta-data with specific naming "env-type=dev"
+ * to the space as env-var-groups 
+* org-level billing/ chargeback support ??
+
+Potential useful CF extension for orgs specific reqs!
+* Support for meta-data in the core platform: for most entities
   * export meta-data in loggregator in templates
   * pluggeable interceptor to the CC API to act upon the provided meta-data
     * on meta-data "env-type=prod", assign automatically a specific placement constraint "label=dev" and specific securuty groups (allow only outgoing traffic to dev network)
