@@ -7,4 +7,20 @@ Alternatively, enable github extension in the extension menu, and then open/impo
 
 Please send PR for sharing your own impact map
 
+# BOF notes: potential useful CF extension for orgs specific reqs ?
+
+Participants: Alberto, William, 
+
+use-cases:
+* PCI-DSS compliance: ensure prod anti affinity (host, VM) with non-prod application.
+* 
+
+* Support for meta-data in the core platform:
+  * export meta-data in loggregator in templates
+  * pluggeable interceptor to the CC API to act upon the provided meta-data
+    * on meta-data "env-type=prod", assign automatically a specific placement constraint "label=dev" and specific securuty groups (allow only outgoing traffic to dev network)
+* How can diego ssh access preserve container instances immutability ? An Lock/unlock mechanism
+* How can I have progressive CF release updates that affect only parts of my cf apps ? (e.g. 209 applies to non production apps)
+  * Tie in placement constraints ("non-prod" label) assigned to some DEAS, and bosh deploy initial canaries targetting those labels
+
 
