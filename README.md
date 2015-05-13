@@ -1,7 +1,7 @@
 # adapting-cf-to-org-reqs
 Impact maps for cfsummit 2015 talk ["How to adapt cf to org specific requirements"](http://cfsummit2015.sched.org/event/4ae1613af9d05e6f84ead3bcdab8ee30?iframe=no#.VT-5_uHTK8g)
 
-To read it, use http://mindmup.com with this permalink https://www.mindmup.com/#m:h1gberche-orange/adapting-cf-to-org-reqs:master:/Adapting%20CF%20to%20organizations.mup 
+To read it, use http://mindmup.com with this permalink https://www.mindmup.com/#m:h1gberche-orange/adapting-cf-to-org-reqs:master:/Adapting%20CF%20to%20organizations.mup Mind mup github add-on will ask you to grant OAuth permissions to your github repos, but won't actually use that unless you choose to save a map into one of your repos. Alternatively, you can save this json file to your local computer disk, and use File-> Open/Import -> From a local drive
 
 Alternatively, enable github extension in the extension menu, and then open/import -> from github specifying this repo, or one of your clone.
 
