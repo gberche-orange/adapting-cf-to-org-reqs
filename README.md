@@ -5,6 +5,8 @@ To read it, use http://mindmup.com with this permalink https://www.mindmup.com/#
 
 Alternatively, enable github extension in the extension menu, and then open/import -> from github specifying this repo, or one of your clone.
 
+Then use the keyboard to expand the collapsed nodes ( '/' slash or arrows keys)
+
 Please send PR for sharing your own impact map
 
 # BOF notes: potential useful CF extension for orgs specific reqs ?
